@@ -30,11 +30,15 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  waybackwhale
 
 # Build settings
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark"
+# theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+# minimal_mistakes_skin: "dark"
+
+encoding: utf-8
 
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -88,3 +92,6 @@ author:
 include:
 #  - .htaccess
   - _pages
+
+sass:
+  add_charset: true
