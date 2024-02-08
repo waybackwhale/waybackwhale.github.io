@@ -36,7 +36,7 @@ SQL로 쿼리하는 데이터베이스는 엑셀과 크게 다르지 않습니�
 쿼리로 작성할 때는 `SELECT`와 `FROM`을 이용합니다. 시트에서 원하는 열을 지정해서 새로운 엑셀 시트 하나를 만든다고 생각해주세요.
 
 ```sql
-SELECT 이름, MBTI FROM MBTI조사
+SELECT `이름`, MBTI FROM `MBTI조사`
 ```
 
 `SELECT` 뒤에는 선택하는 열 이름을 써 주고 `FROM` 뒤에는 시트 이름을 써 주면 됩니다. "`MBTI조사`에서 `이름`과 `MBTI` 정보를 선택해줘."라고 번역해도 의미가 그대로 다가옵니다.
@@ -93,7 +93,7 @@ SELECT count(사원번호) FROM MBTI조사
 결과는 하나의 숫자로 요약됩니다. 만약 INFP 직원 수만 세고 싶다면 `WHERE` 절을 추가해 필터링 하면 됩니다.
 
 ```sql
-SELECT count(사원번호) 
+SELECT count(사원번호)
 FROM MBTI조사 
 WHERE MBTI는 INFP?
 ```
