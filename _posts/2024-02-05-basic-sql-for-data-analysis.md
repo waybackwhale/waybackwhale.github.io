@@ -52,6 +52,7 @@ SELECT name, MBTI
 FROM MBTItest 
 WHERE MBTI=INFP?
 ```
+![image](/assets/img/sql_start.003.jpeg)
 
 구마다 줄바꿈을 했습니다. 쿼리가 길어지면 가독성 때문에 보통 이렇게 정리합니다. `WHERE`에는 예, 아니오로 답할 수 있는 표현이 들어갑니다. 시스템은 조건이 '예'인 경우만 걸러서 보여주게 되는 것이죠.
 
@@ -65,6 +66,8 @@ FROM MBTItest
 WHERE MBTI=INFP?
 ORDER BY name abc
 ```
+
+![image](/assets/img/sql_start.004.jpeg)
 
 `ORDER BY` 뒤에는 기준이 되는 열 이름을 넣습니다. 이름표를 정렬했으면 사람도 움직여야 겠지요. 전체 행은 같이 움직입니다. 
 
@@ -91,6 +94,7 @@ SQL에는 다섯가지 집계 유형이 있습니다.
 ```sql
 SELECT count(employee_id) FROM MBTItest
 ```
+![image](/assets/img/sql_start.005.jpeg)
 
 결과는 하나의 숫자로 요약됩니다. 조회 할 때는 변형 없이 데이터를 갖고 오는데 집계 할 때는 완전히 변합니다. 
 
@@ -116,6 +120,8 @@ GROUP BY MBTI
 
 `GROUP BY` 뒤에는 묶는 기준이 되는 열 이름이 들어갑니다. mbti 유형이 아니라 성별로 묶고 싶다면 'MBTI' 대신 'gender'를 넣어주면 됩니다.
 
+![image](/assets/img/sql_start.008.jpeg)
+
 ## 3. 다른 시트 정보가 필요할 수도 있습니다.
 
 ### 3.1. 개발 부서에는 정말 I와 T가 많을까? - JOIN
@@ -134,6 +140,9 @@ JOIN MBTItest ON employee_id
 
 `JOIN`뒤에 결합할 시트 이름을 넣고 `ON` 뒤에 결합에 이용할 열 이름을 넣어줬습니다. 두 시트에 공통으로 있는 데이터를 이용해야 합니다.
 
+![image](/assets/img/sql_start.009.jpeg)
+![image](/assets/img/sql_start.010.jpeg)
+
 이제 개발부서의 MBTI 정보를 확인해볼까요?
 
 ```sql
@@ -144,6 +153,7 @@ WHERE department='개발팀'
 GROUP BY MBTI
 ORDER BY '사람 많은 순서'
 ```
+
 
 `WHERE`로 개발부서를 필터링 하고 MBTI로 그루핑(`GROUP BY`)해서 사원수를 세었습니다. 그리고 사람 수가 많은 유형부터 보고 싶어서 `ORDER BY`로 정렬도 했습니다.
 
@@ -162,7 +172,13 @@ LEFT JOIN MBTItest ON employee_id
 WHERE 'MBTI 검사 결과가 비어 있는 직원'
 ```
 
+![image](/assets/img/sql_start.011.jpeg)
+
 고래씨는 MBTI 조사 결과가 없는 사원 정보를 추려내 메일을 보낼 수 있었습니다.
+
+`JOIN`과 `LEFT JOIN`은 이렇게 다릅니다.
+
+![image](/assets/img/sql_start.012.jpeg)
 
 ## 4. 맺으면서
 
