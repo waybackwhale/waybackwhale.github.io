@@ -85,6 +85,10 @@ defaults:
     values:
       layout: single
       author_profile: false
+  scope:
+      path: "assets/img"
+    values:
+      image: true
 
 author:
   name     : "Wayback Whale"
