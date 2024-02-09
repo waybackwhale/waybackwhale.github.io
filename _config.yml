@@ -85,7 +85,7 @@ defaults:
     values:
       layout: single
       author_profile: false
-  scope:
+  - scope:
       path: "assets/img"
     values:
       image: true
